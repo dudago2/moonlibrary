@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>月讀圖書館</title>
+    <link rel="stylesheet" href="borrow.css">
+</head>
+<body>
+    <div class="background-overlay"></div>
+    <nav class="navbar">
+        <ul class="menu">
+            <li>
+                關於本館
+                <ul class="dropdown">
+                    <li>本館位置</li>
+                    <li>開放時間</li>
+                    <li>交通方式</li>
+                </ul>
+            </li>
+            <li>
+                館藏查詢
+                <ul class="dropdown">
+                    <li onclick="searchbook()">依照書名查詢</li>
+                    <li onclick="searchauthor()">依照作者查詢</li>
+                    <li onclick="searchsubject()">依照分類查詢</li>
+                </ul>
+            </li>
+            <li>
+                活動報導
+                <ul class="dropdown">
+                    <li>最新活動</li>
+                    <li>活動回顧</li>
+                </ul>
+            </li>
+            <li>
+                線上申請
+                <ul class="dropdown">
+                    <li>申請借書證</li>
+                    <li>申請活動</li>
+                </ul>
+            </li>
+            <li>
+                常見問答
+                <ul class="dropdown">
+                    <li>一般問題</li>
+                    <li>技術問題</li>
+                </ul>
+            </li>
+            
+            <li onclick="home()">
+                首頁
+            </li>
+        </ul>
+        <ul class="logout">
+            <li>
+                會員中心
+                <ul class="dropdown">
+                    <li>會員資訊</li>
+                    <li  onclick="member()">個人資訊</li>
+                </ul>
+            </li>
+            <li onclick="logout()">登出</li>
+        </ul>
+    </nav>
+
+    <!-- 首頁 -->
+    <div id="home" class="home">
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <div class="home-images">
+            <img src="/image/book2.jpg" alt="Image 1">
+            <img src="/image/book1.jpg" alt="Image 2">
+            <img src="/image/book3.jpg" alt="Image 3">
+            <img src="/image/book4.jpg" alt="Image 4">
+            <img src="/image/book5.jpg" alt="Image 5">
+        </div>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+
+    <!-- 書名 -->
+    <div id="bookname" class= "bookname">
+        <div class="search-container">
+            <input type="text" id="searchInput1" placeholder="請輸入書名...">
+            <div id="error_message1" style="color: red; display: none;">請輸入文字</div>
+            <button type="button" onclick="bookSearch()">
+                <img src="https://img.icons8.com/ios-glyphs/30/000000/search.png" alt="Search Icon">
+                查尋
+            </button>
+        </div>
+        <div class="results" id="results1" style="color: white;"></div>
+    </div>
+    <!-- 作者 -->
+    <div id="author" class= "author">
+        <div class="search-container">
+            <input type="text" id="searchInput2" placeholder="請輸入作者..." >
+            <div id="error_message2" style="color: red; display: none;">請輸入文字</div>
+            <button type="button" onclick="authorSearch()">
+                <img src="https://img.icons8.com/ios-glyphs/30/000000/search.png" alt="Search Icon">
+                查尋
+            </button>
+        </div>
+        <div class="results" id="results2" style="color: white;"></div>
+    </div>
+    <!-- 主題 -->
+    <div id="subject" class= "subject">
+        <div class="search-container">
+            <select name="subject" id="searchInput3">
+                <option>請選擇主題</option>
+                <option>英語</option>
+                <option>漫畫</option>
+                <option>小說</option>
+                <option>旅遊</option>
+                <option>歷史</option>
+            </select>
+            <button type="button" onclick="subjectSearch()">
+                <img src="https://img.icons8.com/ios-glyphs/30/000000/search.png" alt="Search Icon">
+                查尋
+            </button>
+        </div>
+        <div id="error_message3" style="color: red; display: none;">請選擇主題！</div>
+        <div class="results" id="results3" style="color: white;"></div>
+    </div>
+    
+
+    <script src="borrow.js"></script>
+</body>
+</html>

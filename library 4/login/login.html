@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>月讀圖書館</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body background="/image/lib.jpg">
+    <img src="/image/logo.png">
+    </div>
+    
+    <div class="login_page">
+        <div id="container1" class="container">
+            <div class="login">  
+                <h3>登入 Login</h3>
+                <form id="loginForm">
+                    <input type="text" id="username" name="username" placeholder="帳號" required>
+                    <div class="tab"></div>
+                    <input type="password" id="password" name="password" placeholder="密碼" required>
+                    <div class="tab"></div>
+                    <input type="submit" value="登入" class="submit" onclick="">
+                </form>  
+                <div id="error_message" style="color: red; display: none;">帳號或密碼錯誤</div>
+                <h5 onclick="show_signup()">註冊帳號</h5>
+                <h5 onclick="show_admin_login()">員工登入</h5>
+            </div><!-- login end -->
+        </div><!-- container1 end -->
+    </div><!-- login_page end -->
+    
+    <div class="signup_page">
+        <div id="container2" class="container">
+            <div class="signup">  
+                <h3>註冊 Sign Up</h3>
+                <form action="用戶管理.php">
+                    <input type="text" id="fullname" name="fullname" placeholder="使用者全名" required>
+                    <div class="tab"></div>
+                    <input type="text" id="username2" name="username" placeholder="帳號" required>
+                    <div class="tab"></div>
+                    <input type="password" id="password2" name="password" placeholder="密碼" required>
+                    <div class="tab"></div>
+                    <input type="password" id="comfirm_password" name="comfirm_password" placeholder="確認密碼" required>
+                    <div class="tab"></div>            
+                    <input type="submit" value="註冊" class="submit">
+                </form>  
+                <h5 onclick="show_login()">登入帳號</h5>
+            </div><!-- signup end -->
+        </div><!-- container2 end -->
+    </div><!-- signup_page end --> 
+
+    <div class="adminlogin_page">
+      <div id="container3" class="container">
+          <div class="adminlogin">  
+              <h3>員工登入 Login</h3>
+              <form id="adminLoginForm">
+                  <input type="text" id="admin_username" name="username" placeholder="帳號" required>
+                  <div class="tab"></div>
+                  <input type="password" id="admin_password" name="password" placeholder="密碼" required>
+                  <div class="tab"></div>
+                  <input type="submit" value="登入" class="submit">
+              </form>  
+              <div id="admin_error_message" style="color: red; display: none;">帳號或密碼錯誤</div>
+              <h5 onclick="show_login()">會員登入</h5>
+          </div><!-- adminlogin end -->
+      </div><!-- container3 end -->
+  </div><!-- adminlogin_page end -->
+
+    <script src="login.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+body {
+    font-family: '微軟正黑體';
+    position: relative;
+    margin: 0;
+    height: 100vh;
+    background-color: #936639;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logout {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+button {
+    padding: 50px;
+    border-radius: 5%;
+    background-color: #77502a;
+    font-size: large;
+    margin: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #614022;
+}

@@ -1,0 +1,79 @@
+* {
+    font-family: '微軟正黑體';
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+img {
+    height: 215px;
+    width: 215px;
+}
+
+.container {
+    margin: 10px auto;
+    padding: 10px;
+    width: 230px;
+    height: auto;
+    background-color: white;
+    border-radius: 6px;
+    border-top: 10px solid #77502a;
+    box-shadow: 0 0px 70px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+#username, #password, #fullname, #comfirm_password, #username2, #password2, #admin_username, #admin_password {
+    width: 200px;
+    height: 20px;
+    margin: 10px;
+    color: #77502a;
+}
+
+h3 {
+    margin: 10px;
+}
+
+h5 {
+    margin: 20px;
+    color: #a3a2a3;
+    cursor: pointer;
+}
+
+h5:hover {
+    color: black;
+}
+
+.submit {
+    color: white;
+    background: #77502a;
+    width: 200px;
+    height: 30px;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.submit:hover {
+    background: #936639;
+}
+
+#container2, #container3 {
+    display: none; /* Hidden by default */
+}
+
+input {
+    padding: 5px;
+    border: solid 1px #ccc;
+    border-radius: 5px;
+}
