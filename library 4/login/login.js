@@ -45,26 +45,54 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
     e.preventDefault();
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
-    
-    // 假設用戶名和密碼檢驗在後端進行
-    if (username == "user" && password == "1234"){
-        window.location.href = '/borrow/borrow.html';
-    } else {
+
+    fetch('http://localhost:8080/api/borrower/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email: username, password: password })
+    })
+    .then(response => {
+        if (response.ok) {
+            window.location.href = '/borrow/borrow.html';
+        } else {
+            document.getElementById('error_message').style.display = 'block';
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
         document.getElementById('error_message').style.display = 'block';
-    }
+    });
 });
 
 document.getElementById('adminLoginForm').addEventListener('submit', function(e) {
     e.preventDefault();
     var username = document.getElementById('admin_username').value;
     var password = document.getElementById('admin_password').value;
-    
-    // 假設用戶名和密碼檢驗在後端進行
-    if (username == "staff" && password == "1234"){
-        window.location.href = '/staff/staff.html';
-    } else if (username == "admin" && password == "1234") {
-        window.location.href = '/admin/admin.html';
-    } else {
+
+    fetch('http://localhost:8080/api/staff/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email: username, password: password })
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Invalid login');
+        }
+        return response.json();
+    })
+    .then(data => {
+        if (data.admin) {
+            window.location.href = '/admin/admin.html';
+        } else {
+            window.location.href = '/staff/staff.html';
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
         document.getElementById('admin_error_message').style.display = 'block';
-    }
+    });
 });
