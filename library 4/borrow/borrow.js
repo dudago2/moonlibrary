@@ -45,7 +45,7 @@ function searchsubject() {
 }
 
 function logout() {
-    window.location.href = '/login/login.html';
+    window.location.href = '../login/login.html';
 }
 
 function home() {
@@ -134,3 +134,7 @@ function subjectSearch() {
  function member() {
     window.location.href = 'member.html';
  }
+
+  function meminfo() {
+    window.location.href = 'meminfo.html'
+  }

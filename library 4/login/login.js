@@ -48,7 +48,7 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
     
     // 假設用戶名和密碼檢驗在後端進行
     if (username == "user" && password == "1234"){
-        window.location.href = '/borrow/borrow.html';
+        window.location.href = '../borrow/borrow.html';
     } else {
         document.getElementById('error_message').style.display = 'block';
     }
@@ -61,9 +61,9 @@ document.getElementById('adminLoginForm').addEventListener('submit', function(e)
     
     // 假設用戶名和密碼檢驗在後端進行
     if (username == "staff" && password == "1234"){
-        window.location.href = '/staff/staff.html';
+        window.location.href = '../staff/staff.html';
     } else if (username == "admin" && password == "1234") {
-        window.location.href = '/admin/admin.html';
+        window.location.href = '../admin/admin.html';
     } else {
         document.getElementById('admin_error_message').style.display = 'block';
     }

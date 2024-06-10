@@ -3,7 +3,7 @@ body {
     position: relative;
     margin: 0;
     height: 100vh;
-    background: url('/image/lib.jpg') no-repeat center center fixed;
+    background: url('../image/lib.jpg') no-repeat center center fixed;
     background-size: cover;
     display: flex;
     align-items: center;
