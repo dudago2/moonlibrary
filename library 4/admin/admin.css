@@ -64,6 +64,13 @@ button:hover {
     cursor: pointer;
 }
 
+.edit-form-container label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-align: left;
+}
+
 .employee-button:hover {
     background-color: #614022;
 }
@@ -72,7 +79,7 @@ button:hover {
     display: none;
     max-width: 600px;
     margin: 50px auto;
-    padding: 20px;
+    padding: 10px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;

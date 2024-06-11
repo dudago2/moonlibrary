@@ -61,7 +61,7 @@ employees.forEach(employee => {
    listItem.innerHTML = `
        <span class="employee-id">${employee.id}</span> - 
        <span class="employee-name">${employee.name}</span>
-       <button class="employee-button" onclick="editEmployee('${employee.id}')">Edit</button>
+       <button class="employee-button" onclick="editEmployee('${employee.id}')">編輯</button>
    `;
    employeeList.appendChild(listItem);
 });
@@ -101,7 +101,7 @@ function renderEmployeeList() {
        listItem.innerHTML = `
            <span class="employee-id">${employee.id}</span> - 
            <span class="employee-name">${employee.name}</span>
-           <button class="employee-button" onclick="editEmployee('${employee.id}')">Edit</button>
+           <button class="employee-button" onclick="editEmployee('${employee.id}')">編輯</button>
        `;
        employeeList.appendChild(listItem);
    });
