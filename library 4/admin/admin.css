@@ -219,3 +219,27 @@ button:hover {
 .edit-member-form-container button:hover {
     background-color: #614022;
 }
+
+/* viewborrow */
+.borrowing-list {
+    width: 100%;
+    max-width: 800px;
+}
+
+.borrowing-list-header, .borrowing-list-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.borrowing-list-header {
+    font-weight: bold;
+    background-color: #ddd;
+    border-bottom: 1px solid #bbb;
+}
+
+.borrowing-list-item span {
+    flex: 1;
+    text-align: center;
+}
