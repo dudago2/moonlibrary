@@ -1,0 +1,115 @@
+body {
+    font-family: '微軟正黑體';
+    position: relative;
+    margin: 0;
+    height: 100vh;
+    background: url('../image/lib.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(200, 200, 200, 0.5); /* 調整這裡的透明度和顏色 */
+    background-size: cover;
+    z-index: -1;
+}
+
+.container1 {
+    background-color: #d3b58b;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 600px;
+}
+
+.container2 {
+    display: none;
+    background-color: #d3b58b;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 600px;
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-pic {
+    flex-shrink: 0;
+    margin-right: 20px;
+}
+
+.profile-pic img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+.details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: #fff;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+    margin-bottom: 10px;
+}
+
+.detail-item label {
+    margin-bottom: 5px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input, textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+input[readonly], textarea[readonly] {
+    background-color: #eee;
+}
+
+textarea {
+    resize: none;
+    height: 80px;
+    width: calc(100% - 16px);
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.button-group button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+}
