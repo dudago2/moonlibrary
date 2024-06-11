@@ -11,7 +11,7 @@ function logout() {
  }
 
  function admineditstaff() {
-    window.location.href = 'admineditbook.html';
+    window.location.href = 'admineditstaff.html';
  }
 
  function adminviewborrow() {

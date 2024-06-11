@@ -46,6 +46,8 @@ function searchsubject() {
 
 function logout() {
     window.location.href = '../login/login.html';
+    localStorage.removeItem("name");
+    localStorage.removeItem("email");
 }
 
 function home() {
