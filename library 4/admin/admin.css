@@ -103,3 +103,61 @@ button:hover {
 .edit-form-container button:hover {
     background-color: #614022;
 }
+
+/* editbook */
+.book-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.book-button {
+    background-color: #77502a;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.edit-book-form-container label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.book-button:hover {
+    background-color: #614022;
+}
+
+.edit-book-form-container {
+    display: none;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.edit-book-form-container input {
+    width: calc(100% - 22px);
+    padding: 4px;
+    margin-bottom: 10px;
+}
+
+.edit-book-form-container button {
+    background-color: #77502a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.edit-book-form-container button:hover {
+    background-color: #614022;
+}

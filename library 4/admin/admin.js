@@ -106,3 +106,20 @@ function renderEmployeeList() {
        employeeList.appendChild(listItem);
    });
 }
+
+// 書籍列表
+document.addEventListener('DOMContentLoaded', () => {
+   const books = [
+       { isbn: '978-3-16-148410-0', title: 'Book Title 1' },
+       { isbn: '978-1-234-56789-7', title: 'Book Title 2' },
+       // 可以在这里添加更多书籍
+   ];
+
+   const bookListContainer = document.getElementById('book-list-container');
+
+   books.forEach(book => {
+       const listItem = document.createElement('li');
+       listItem.innerHTML = `<span class="isbn">${book.isbn}</span> - <span class="title">${book.title}</span>`;
+       bookListContainer.appendChild(listItem);
+   });
+});
