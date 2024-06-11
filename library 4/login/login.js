@@ -11,7 +11,12 @@ function show_login() {
     document.getElementById("password").value = "";
     document.getElementById("error_message").style.display = "none";
 }
+function getLocalS(){
+    var getUserEmail= document.getElementById("username").value;
+    localStorage.setItem("email", getUserEmail);
+    // console.log(getUserName);
 
+}
 function show_signup() {
     var login = document.getElementById("container1");
     var signup = document.getElementById("container2");
