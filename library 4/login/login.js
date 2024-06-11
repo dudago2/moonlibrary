@@ -17,6 +17,7 @@ function getLocalS(){
     // console.log(getUserName);
 
 }
+
 function show_signup() {
     var login = document.getElementById("container1");
     var signup = document.getElementById("container2");
@@ -60,6 +61,7 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
     })
     .then(response => {
         if (response.ok) {
+            getLocalS();
             window.location.href = '/borrow/borrow.html';
         } else {
             document.getElementById('error_message').style.display = 'block';
@@ -86,13 +88,16 @@ document.getElementById('adminLoginForm').addEventListener('submit', function(e)
     .then(response => {
         if (!response.ok) {
             throw new Error('Invalid login');
+            
         }
         return response.json();
     })
     .then(data => {
         if (data.admin) {
+            localStorage.setItem("email", username);
             window.location.href = '/admin/admin.html';
         } else {
+            localStorage.setItem("email", username);
             window.location.href = '/staff/staff.html';
         }
     })

@@ -114,8 +114,6 @@ function commit() {
     var editEmail = document.getElementById("editEmail").value;
     var editPassword = document.getElementById("editPassword").value;
 
-    // var getMemberId = document.getElementById("memberId").value; // Ensure this holds the correct ID
-
     fetch('http://localhost:8080/api/borrower/' + getMemberId, {
         method: 'PUT',
         headers: {
