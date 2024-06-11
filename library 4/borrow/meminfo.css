@@ -33,7 +33,7 @@ body {
     padding-left: 50px;
 }
 
- img {
+.profile img {
     max-width: 50px;
     max-width: 50px;
     border-radius: 50%;
@@ -68,4 +68,65 @@ button {
     margin: 10px;
     color: white;
     cursor: pointer;
+}
+
+aside {
+    float:left;
+    border-right:1px solid #77502a;
+    height:379.85px;
+    width: 20%;
+    padding:10px;
+}
+
+h1 {
+    display: flex;
+    color: #77502a;
+    justify-content: center;
+}
+
+aside :hover {
+    background-color: rgb(170, 170, 170);
+    cursor: pointer;
+}
+
+.record, .collect {
+    float:left;
+    height:379.85px;
+    width: 76.62%;
+    padding:10px;
+}
+
+.collect {
+    display: none;
+}
+
+.book-list {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    border-collapse: collapse;
+}
+.book-item {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+}
+.book-item img {
+    width: 100px;
+    height: auto;
+    margin-right: 10px;
+}
+.book-details {
+    flex-grow: 1;
+}
+.book-details p {
+    margin: 5px 0;
+}
+.book-status {
+    text-align: right;
+    white-space: nowrap;
+}
+.book-status p {
+    margin: 5px 0;
 }
