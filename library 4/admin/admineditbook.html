@@ -11,13 +11,35 @@
         <div class="logout">
             <button onclick="back()">返回</button>
         </div>
-        <div class="search-bar">
-            <input type="text" id="search-input" placeholder="搜尋書籍">
-            <button onclick="search()">搜尋</button>
+        <div class="book-list-container">
+            <h2>書籍列表</h2>
+            <ul class="book-list" id="bookList"></ul>
         </div>
-        <div id="search-results"></div>
     </div>
 
-    <script src="admin.js"></script>
+    <div class="edit-book-form-container" id="editBookFormContainer">
+        <h2>編輯書籍</h2>
+        <form id="editBookForm">
+            <label for="editBookIsbn">ISBN</label>
+            <input type="text" id="editBookIsbn" readonly>
+            <label for="editBookTitle">書名</label>
+            <input type="text" id="editBookTitle" placeholder="Title">
+            <label for="editBookCategory">分類</label>
+            <input type="text" id="editBookCategory" placeholder="Category">
+            <label for="editBookAuthor">作者</label>
+            <input type="text" id="editBookAuthor" placeholder="Author">
+            <label for="editBookPublisher">出版社</label>
+            <input type="text" id="editBookPublisher" placeholder="Publisher">
+            <label for="editBookPubDate">出版日期</label>
+            <input type="text" id="editBookPubDate">
+            <label for="editBookCallNumber">索書號</label>
+            <input type="text" id="editBookCallNumber" placeholder="Call Number">
+            <label for="editBookImage">圖片URL</label>
+            <input type="text" id="editBookImage" placeholder="Image URL">
+            <button type="button" onclick="saveBook()">儲存</button>
+        </form>
+    </div>
+
+    <script src="editbook.js"></script>
 </body>
 </html>

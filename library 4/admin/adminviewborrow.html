@@ -11,13 +11,21 @@
         <div class="logout">
             <button onclick="back()">返回</button>
         </div>
-        <div class="search-bar">
-            <input type="text" id="search-input" placeholder="搜尋借閱編號">
-            <button onclick="search()">搜尋</button>
+        <div class="borrowing-list-container">
+            <h2>借閱資訊列表</h2>
+            <ul class="borrowing-list" id="borrowingList">
+                <li class="borrowing-list-header">
+                    <span class="borrowing-id">借閱ID</span>
+                    <span class="member-id">會員ID</span>
+                    <span class="isbn">ISBN</span>
+                    <span class="borrow-time">借閱時間</span>
+                    <span class="due-time">到期時間</span>
+                    <span class="return-time">還書時間</span>
+                </li>
+            </ul>
         </div>
-        <div id="search-results"></div>
     </div>
 
-    <script src="admin.js"></script>
+    <script src="view.js"></script>
 </body>
 </html>
