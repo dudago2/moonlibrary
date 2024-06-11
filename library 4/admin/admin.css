@@ -161,3 +161,61 @@ button:hover {
 .edit-book-form-container button:hover {
     background-color: #614022;
 }
+
+/* editmem */
+.member-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.member-button {
+    background-color: #77502a;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.edit-member-form-container label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.member-button:hover {
+    background-color: #614022;
+}
+
+.edit-member-form-container {
+    display: none;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.edit-member-form-container input {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.edit-member-form-container button {
+    background-color: #77502a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.edit-member-form-container button:hover {
+    background-color: #614022;
+}

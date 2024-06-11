@@ -11,13 +11,31 @@
         <div class="logout">
             <button onclick="back()">返回</button>
         </div>
-        <div class="search-bar">
-            <input type="text" id="search-input" placeholder="搜尋會員">
-            <button onclick="search()">搜尋</button>
+        <div class="member-list-container">
+            <h2>會員列表</h2>
+            <ul class="member-list" id="memberList"></ul>
         </div>
-        <div id="search-results"></div>
     </div>
 
-    <script src="admin.js"></script>
+    <div class="edit-member-form-container" id="editMemberFormContainer">
+        <h2>編輯會員</h2>
+        <form id="editMemberForm">
+            <label for="editMemberId">ID</label>
+            <input type="text" id="editMemberId" readonly>
+            <label for="editMemberName">姓名</label>
+            <input type="text" id="editMemberName" placeholder="Name">
+            <label for="editMemberPhone">電話</label>
+            <input type="text" id="editMemberPhone" placeholder="Phone (09XX-XXX-XXX)">
+            <label for="editMemberPassword">密碼</label>
+            <input type="password" id="editMemberPassword" placeholder="Password">
+            <label for="editMemberEmail">信箱</label>
+            <input type="email" id="editMemberEmail" placeholder="Email">
+            <label for="editMemberAvailable">Available</label>
+            <input type="checkbox" id="editMemberAvailable">
+            <button type="button" onclick="saveMember()">儲存</button>
+        </form>
+    </div>
+
+    <script src="editmem.js"></script>
 </body>
 </html>
