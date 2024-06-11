@@ -11,11 +11,23 @@
         <div class="logout">
             <button onclick="back()">返回</button>
         </div>
-        <div class="search-bar">
-            <input type="text" id="search-input" placeholder="搜尋員工">
-            <button onclick="search()">搜尋</button>
+        <div class="employee-list-container">
+            <h2>員工列表</h2>
+            <ul class="employee-list" id="employeeList"></ul>
         </div>
-        <div id="search-results"></div>
+    </div>
+
+    <div class="edit-form-container" id="editFormContainer">
+        <h2>Edit Employee</h2>
+        <form id="editForm">
+            <input type="text" id="editId" readonly>
+            <input type="text" id="editName" placeholder="Name">
+            <input type="text" id="editPhone" placeholder="Phone (09XX-XXX-XXX)">
+            <input type="text" id="editAddress" placeholder="Address">
+            <input type="email" id="editEmail" placeholder="Email">
+            <input type="number" id="editSalary" placeholder="Salary">
+            <button type="button" onclick="saveEmployee()">Save</button>
+        </form>
     </div>
 
     <script src="admin.js"></script>
