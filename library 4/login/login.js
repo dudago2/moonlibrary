@@ -62,6 +62,7 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
     .then(response => {
         if (response.ok) {
             getLocalS();
+            localStorage.setItem("admin", 1)
             window.location.href = '/borrow/borrow.html';
         } else {
             document.getElementById('error_message').style.display = 'block';

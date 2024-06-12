@@ -1,12 +1,11 @@
 function back() {
     var getAdmin = localStorage.getItem("admin");
-    if(getAdmin==1){
+    if (getAdmin == 1) {
         window.location.href = '/admin/admin.html';
-    }
-    else{
+    } else {
         window.location.href = '/staff/staff.html';
     }
- }
+}
 
 document.addEventListener("DOMContentLoaded", function() {
     getMemberAllData()
@@ -22,47 +21,30 @@ document.addEventListener("DOMContentLoaded", function() {
     const editMemberId = document.getElementById('editMemberId');
     const editMemberName = document.getElementById('editMemberName');
     const editMemberPhone = document.getElementById('editMemberPhone');
-    const editMemberPassword = document.getElementById('editMemberPassword');
     const editMemberEmail = document.getElementById('editMemberEmail');
-    const editMemberAvailable = document.getElementById('editMemberAvailable');
 
     function editMember(id) {
-        fetch('http://localhost:8080/api/borrower/'+id, {
+        fetch('http://localhost:8080/api/borrower/' + id, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
             }
         })
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (data) {
+        .then(response => response.json())
+        .then(data => {
             console.log(data);
             if (data) {
-            editMemberId.value = data.borrowerId;
-            editMemberName.value = data.name;
-            editMemberPhone.value = data.phoneNumber;
-            editMemberEmail.value = data.email;
-            editMemberFormContainer.style.display = 'block';
-        }
-      
+                editMemberId.value = data.borrowerId;
+                editMemberName.value = data.name;
+                editMemberPhone.value = data.phoneNumber;
+                editMemberEmail.value = data.email;
+                editMemberFormContainer.style.display = 'block';
+            }
         })
         .catch(error => {
             console.error('Error:', error);
             document.getElementById('error_message').style.display = 'block';
         });
-         // const employee = employees.find(emp => emp.id === id);
-      
-        // const member = members.find(m => m.id === id);
-        // if (member) {
-        //     editMemberId.value = member.id;
-        //     editMemberName.value = member.name;
-        //     editMemberPhone.value = member.phone;
-        //     editMemberPassword.value = member.password;
-        //     editMemberEmail.value = member.email;
-        //     editMemberAvailable.checked = member.available;
-        //     editMemberFormContainer.style.display = 'block';
-        // }
     }
 
     function saveMember() {
@@ -70,9 +52,8 @@ document.addEventListener("DOMContentLoaded", function() {
         var getName = editMemberName.value;
         var getmail = editMemberEmail.value;
         var getphone = editMemberPhone.value;
-       
 
-        fetch('http://localhost:8080/api/borrower/'+getId+'?name='+getName+'&email='+getmail+'&phoneNumber='+getphone, {
+        fetch('http://localhost:8080/api/borrower/' + getId + '?name=' + getName + '&email=' + getmail + '&phoneNumber=' + getphone, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -81,74 +62,65 @@ document.addEventListener("DOMContentLoaded", function() {
         .then(response => {
             if (!response.ok) {
                 throw new Error('failed');
-            }else{
-                alert("修改成功")
+            } else {
+                alert("修改成功");
             }
             return response.json();
-            
         })
         .then(data => {
-            // Handle the response data if needed
             console.log('Update successful', data);
-            // localStorage.setItem("email", editEmail);
-            
-    
-            
-            
-            
         })
         .catch(error => {
             console.error('Error:', error);
         });
-    
-        
-        // const id = editMemberId.value;
-        // const member = members.find(m => m.id === id);
-        // if (member) {
-        //     member.name = editMemberName.value;
-        //     member.phone = editMemberPhone.value;
-        //     member.password = editMemberPassword.value;
-        //     member.email = editMemberEmail.value;
-        //     member.available = editMemberAvailable.checked;
-        //     alert('Member information saved.');
-        //     editMemberFormContainer.style.display = 'none';
-        //     renderMemberList();
-        // }
     }
 
-    // Expose functions to global scope
+    function deleteMember(id) {
+        fetch('http://localhost:8080/api/borrower/' + id, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('failed to delete');
+            } else {
+                alert("刪除成功");
+                getMemberAllData(); // Refresh the list after deletion
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }
+
     window.editMember = editMember;
     window.saveMember = saveMember;
-
-    // Initial render
-    
+    window.deleteMember = deleteMember;
 });
 
-function getMemberAllData(){
+function getMemberAllData() {
     fetch('http://localhost:8080/api/borrower', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
         }
     })
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
+    .then(response => response.json())
+    .then(data => {
         console.log(data);
-        var getlen = data.length;
-        console.log(getlen);
         memberList.innerHTML = '';
-        data.forEach(data => {
+        data.forEach(member => {
             const listItem = document.createElement('li');
             listItem.innerHTML = `
-                <span class="member-id">${data.borrowerId}</span> - 
-                <span class="member-name">${data.name}</span>
-                <button class="member-button" onclick="editMember('${data.borrowerId}')">編輯</button>
+                <span class="member-id">${member.borrowerId}</span> - 
+                <span class="member-name">${member.name}</span>
+                <button class="member-button" onclick="editMember('${member.borrowerId}')">編輯</button>
+                <button class="member-button" onclick="deleteMember('${member.borrowerId}')">刪除</button>
             `;
             memberList.appendChild(listItem);
         });
-  
     })
     .catch(error => {
         console.error('Error:', error);

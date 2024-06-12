@@ -5,6 +5,9 @@
  function selfinfo() {
    window.location.href = 'staffinfo.html';
  }
+ function createBorrower() {
+  window.location.href = '../borrow/newborrow.html';
+ }
 
  function editmem() {
   window.location.href = '/admin/admineditmem.html';

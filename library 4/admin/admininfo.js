@@ -112,7 +112,7 @@ function commit() {
     var editEmail = document.getElementById("editEmail").value;
     var editPassword = document.getElementById("editPassword").value;
 
-    fetch('http://localhost:8080/api/staff/' + getStaffId, {
+    fetch('http://localhost:8080/api/staff/s/' + getStaffId, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
