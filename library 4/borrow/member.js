@@ -114,7 +114,7 @@ function commit() {
     var editEmail = document.getElementById("editEmail").value;
     var editPassword = document.getElementById("editPassword").value;
 
-    fetch('http://localhost:8080/api/borrower/' + getMemberId, {
+    fetch('http://localhost:8080/api/borrower/B/' + getMemberId, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'

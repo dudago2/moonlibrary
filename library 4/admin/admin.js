@@ -16,6 +16,13 @@ function logout() {
    
  }
 
+ function admincreatestaff() {
+   
+   window.location.href = 'admincreatestaff.html';
+  
+}
+
+
  function adminviewborrow() {
     window.location.href = 'adminviewborrow.html';
  }

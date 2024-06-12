@@ -7,15 +7,15 @@
  }
 
  function editmem() {
-  window.location.href = 'staffeditmem.html';
+  window.location.href = '/admin/admineditmem.html';
  }
 
  function editbook() {
-  window.location.href = 'staffeditbook.html';
+  window.location.href = '/admin/admineditbook.html';
  }
 
  function viewborrow() {
-  window.location.href = 'staffviewborrow.html';
+  window.location.href = '/admin/adminviewborrow.html';
  }
 
  function search() {

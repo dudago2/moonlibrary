@@ -95,9 +95,11 @@ document.getElementById('adminLoginForm').addEventListener('submit', function(e)
     .then(data => {
         if (data.admin) {
             localStorage.setItem("email", username);
+            localStorage.setItem("admin", 1)
             window.location.href = '/admin/admin.html';
         } else {
             localStorage.setItem("email", username);
+            localStorage.setItem("admin", 2)
             window.location.href = '/staff/staff.html';
         }
     })
